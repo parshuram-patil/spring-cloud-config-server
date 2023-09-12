@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: sa
+    url: jdbc:sqlserver://192.168.64.4:1433;databaseName=MyDb;trustServerCertificate=true
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: MyPass
+  cloud:
+    config:
+      server:
+        jdbc:
+          default-label: latest
+  application:
+    name: spring-cloud-config-server
+  profiles:
+    active: jdbc
+server:
+  port: '8080'
