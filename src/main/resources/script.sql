@@ -12,33 +12,12 @@ CREATE TABLE properties (
 GO
 
 INSERT INTO properties VALUES
--- Default
-('application', 'default', 'latest', 'env.name.full', 'Default'),
-('application', 'default', 'latest', 'env.name.short', 'DEF'),
-('application', 'dev', 'latest', 'env.name.full', 'Development'),
-('application', 'dev', 'latest', 'env.name.short', 'DEV'),
-('application', 'qa', 'latest', 'env.name.full', 'Quality'),
-('application', 'qa', 'latest', 'env.name.short', 'QA'),
-('application', 'prod', 'latest', 'env.name.full', 'Production'),
-('application', 'prod', 'latest', 'env.name.short', 'PROD'),
-
--- Client - 1
-('spring-cloud-config-client', 'default', 'latest', 'env.name.full', 'Default - C1'),
-('spring-cloud-config-client', 'default', 'latest', 'env.name.short', 'DEF - C1'),
-('spring-cloud-config-client', 'dev', 'latest', 'env.name.full', 'Development - C1'),
-('spring-cloud-config-client', 'dev', 'latest', 'env.name.short', 'DEV - C1'),
-('spring-cloud-config-client', 'qa', 'latest', 'env.name.full', 'Quality - C1'),
-('spring-cloud-config-client', 'qa', 'latest', 'env.name.short', 'QA - C1'),
-('spring-cloud-config-client', 'prod', 'latest', 'env.name.full', 'Production - C1'),
-('spring-cloud-config-client', 'prod', 'latest', 'env.name.short', 'PROD - C1'),
-
--- Client - 2
-('XYZ', 'default', 'latest', 'env.name.full', 'Default - C2'),
-('XYZ', 'default', 'latest', 'env.name.short', 'DEF - C2'),
-('XYZ', 'dev', 'latest', 'env.name.full', 'Development - C2'),
-('XYZ', 'dev', 'latest', 'env.name.short', 'DEV - C2'),
-('XYZ', 'qa', 'latest', 'env.name.full', 'Quality - C2'),
-('XYZ', 'qa', 'latest', 'env.name.short', 'QA - C2')
--- ('XYZ', 'prod', 'latest', 'env.name.full', 'Production - C2'),
--- ('XYZ', 'prod', 'latest', 'env.name.short', 'PROD - C2')
+('spring-cloud-config-client', 'default', 'latest', 'executor.pool.core-size', '5'),
+('spring-cloud-config-client', 'default', 'latest', 'executor.pool.max-size', '10'),
+('spring-cloud-config-client', 'default', 'latest', 'executor.pool.capacity', '100'),
+('spring-cloud-config-client', 'prod', 'latest', 'executor.pool.core-size', '7'),
+('spring-cloud-config-client', 'prod', 'latest', 'executor.pool.max-size', '17'),
+('spring-cloud-config-client', 'prod', 'latest', 'executor.pool.capacity', '177')
 GO
+
+SELECT * FROM properties
